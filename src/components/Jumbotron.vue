@@ -1,5 +1,5 @@
 <template>
-    <section id="home" class="bg-center bg-[url('world-wide-web-7109276_1920.jpg')] bg-blend-multiply">
+    <section id="home" class="bg-center bg-[url('/images/world-wide-web-7109276_1920.jpg')] bg-blend-multiply">
         <div class="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
             <img src="../assets/20240320_125955_miniature.png" class="mt-3 mx-auto rounded-full scale-75 grayscale" alt="Photo de profile de Michaël Degorre">
             <h1 id="element" class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl"></h1>
