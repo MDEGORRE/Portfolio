@@ -6,7 +6,7 @@
 
     <Vue3Marquee :pause-on-hover="true">
         <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 mx-3" v-for="project in projects">
-                <img class="rounded-t-lg mx-auto w-48 h-48 p-2" :src="getFullUrl() + '/' + project.image" alt="FFXIV Market Helper logo" />
+                <img class="rounded-t-lg mx-auto w-48 h-48 p-2" :src="imageUrls[project.image]" alt="FFXIV Market Helper logo" />
             <div class="p-5">
                 <h5 class="mb-2 text-xl text-center font-bold tracking-tight text-gray-900 dark:text-white">{{ project.title }}</h5>
                 <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ project.purpose }}</p>
@@ -35,7 +35,13 @@
 <script setup>
 import projects from '../projects';
 
-function getFullUrl() {
-  return new URL('../assets', import.meta.url).href
+// Charger toutes les images du dossier assets
+const images = import.meta.glob('/src/assets/*', { eager: true });
+
+// Créer un objet pour mapper les noms d'images à leurs URLs
+const imageUrls = {};
+for (const path in images) {
+    const fileName = path.split('/').pop();
+    imageUrls[fileName] = images[path].default;
 }
 </script>
