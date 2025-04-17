@@ -1,4 +1,10 @@
 <script setup>
+import { onMounted } from 'vue'
+import { initDropdowns } from 'flowbite';
+
+onMounted(() => {
+  initDropdowns();
+})
 
 import Navbar from './components/Navbar.vue';
 import Timeline from './components/Timeline.vue';
